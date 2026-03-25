@@ -537,27 +537,7 @@ body {
   background-color: #FEF6DB;
 }
 
-#carrousel::before {
-  content: "";
-  position: absolute;
-  inset: 0;
 
-  background-color: #ff0019; /* ← your red */
-
-  -webkit-mask-image: url('/img/trama-3.png');
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-size: cover;
-  -webkit-mask-position: center;
-
-  mask-image: url('/img/trama-3.png');
-  mask-repeat: no-repeat;
-  mask-size: cover;
-  mask-position: center;
-  opacity: 20%;
-
-  z-index: 1;
-  pointer-events: none;
-}
 
 #carrousel h1 {
   font-family: "Charm";
