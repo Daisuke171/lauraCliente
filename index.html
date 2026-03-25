@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tu Evento - Premium</title>
+  <link rel="stylesheet" href="./src/style.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+</head>
+<body>
+  <main class="page-content">
+      <nav class="floating-nav">
+    <div class="nav-logo">J&D Eventos</div>
+    <ul class="nav-links">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#servicios">Salones</a></li>
+      <li><a href="#productos">Productos</a></li>
+      <li><a href="#contacto" class="nav-btn-outline"><div>Contacto</div></a></li>
+    </ul>
+  </nav>
+
+  <header id="inicio" class="hero-section">
+    <div class="hero-content">
+      <h1 class="neon-title">Demo Eventos</h1>
+      <h2 class="subtitle">Tu evento exactamente como <strong>lo soñaste</strong></h2>
+
+      <div class="circles-container">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </div>
+
+      <p>La experiencia premium que estás buscando, con la estética que te define.</p>
+      <button class="cta-button">Cotizá tu fecha</button>
+    </div>
+  </header>
+
+  <div id="carrousel" style="padding-top: 100px; padding-bottom: 10px;">
+    <h1>Nuestros recuerdos</h1>
+    <div class="container-full">
+      <div class="owl-carousel owl-theme">
+        <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1200" alt="Gran Salón de Bodas">
+        <img src="https://images.unsplash.com/photo-1471967183320-ee018f6e114a?q=80&w=1200" alt="Ceremonia Exterior">
+        <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1200" alt="Evento Corporativo Moderno">
+        <img src="https://images.unsplash.com/photo-1471967183320-ee018f6e114a?q=80&w=1200" alt="Recepción Elegante">
+        <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1200" alt="Fiesta de Gala">
+      </div>
+      </div>
+  </div>
+
+  <section id="servicios" class="services-section">
+      <h2 class="section-title">Nuestros Servicios</h2>
+      <div class="services-grid">
+        
+        <div class="glass-card">
+          <h3>Salón Principal + Recepción</h3>
+          <p class="price" data-base="500000">$ 500.000</p>
+          <button class="card-btn">Agregar</button>
+        </div>
+
+        <div class="glass-card">
+          <h3>Catering Premium (por persona)</h3>
+          <p class="price" data-base="25000">$ 25.000</p>
+          <button class="card-btn">Agregar</button>
+        </div>
+
+        <div class="glass-card">
+          <h3>DJ, Iluminación y Técnica</h3>
+          <p class="price" data-base="150000">$ 150.000</p>
+          <button class="card-btn">Agregar</button>
+        </div>
+
+      </div>
+  </section>
+  </main>
+
+  <footer id="contacto" class="site-footer">
+    <div class="footer-container">
+
+      <div class="footer-brand">
+        <h3 class="footer-logo">J&D Eventos</h3>
+        <p>Haciendo realidad el evento de tus sueños con un servicio premium, estética impecable y atención personalizada.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Explorar</h4>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#servicios">Salones y Servicios</a></li>
+          <li><a href="#">Preguntas Frecuentes</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contacto</h4>
+        <p>📍 Palermo, Buenos Aires</p>
+        <p>📱 +54 9 11 1234-5678</p>
+        <p>✉️ info@jdeventos.com</p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 J&D Eventos. Todos los derechos reservados. | Diseñado para tu mejor experiencia.</p>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  
+  <script>
+    // Inicialización de Owl Carousel
+    $(document).ready(function(){
+      $('.owl-carousel').owlCarousel({
+        center: true,
+        loop: true,
+        nav: true,
+        items: 5,
+        navText: ['<i class="fas fa-chevron-left"></i>','<i class="fas fa-chevron-right"></i>'],
+        
+        // --- CAMBIOS PARA AUTOPLAY AUTOMÁTICO ---
+        autoplay: true,
+        autoplayTimeout: 2500, // 2.5 segundos por foto
+        autoplayHoverPause: true, // Se pausa al pasar el mouse
+        // ----------------------------------------
+
+        responsive:{
+          0: { items: 2 },
+          768: { items: 3 },
+          990: { items: 5 }
+        },
+        onInitialized: coverFlowEfx,
+        onTranslate: coverFlowEfx,
+      });
+
+      // Efecto Coverflow (Lógica igual, solo ajustada por CSS)
+      function coverFlowEfx(e){
+        if ($('.owl-dots').length) {
+          $('.owl-dots').remove();
+        }
+        var idx = e.item.index;
+        $('.owl-item.big').removeClass('big');
+        $('.owl-item.medium').removeClass('medium');
+        $('.owl-item.mdright').removeClass('mdright');
+        $('.owl-item.mdleft').removeClass('mdleft');
+        $('.owl-item.smallRight').removeClass('smallRight');
+        $('.owl-item.smallLeft').removeClass('smallLeft');
+        
+        $('.owl-item').eq(idx -1).addClass('medium mdleft');
+        $('.owl-item').eq(idx).addClass('big');
+        $('.owl-item').eq(idx + 1).addClass('medium mdright');
+        $('.owl-item').eq(idx + 2).addClass('smallRight');
+        $('.owl-item').eq(idx - 2).addClass('smallLeft');
+      }
+    });
+  </script>
+
+  <script>
+    let multiplicador = 1;
+    const btnActualizar = document.getElementById('btn-actualizar');
+    const elementosPrecio = document.querySelectorAll('.price');
+    const textMultiplicador = document.getElementById('text-multiplicador');
+
+    btnActualizar.addEventListener('click', () => {
+      multiplicador *= 1.15; // Suma 15%
+      textMultiplicador.textContent = `+${((multiplicador - 1) * 100).toFixed(0)}%`;
+
+      elementosPrecio.forEach(elemento => {
+        const precioBase = Number(elemento.getAttribute('data-base'));
+        const nuevoPrecio = precioBase * multiplicador;
+        
+        // Formatear a pesos argentinos
+        elemento.textContent = new Intl.NumberFormat('es-AR', {
+          style: 'currency', currency: 'ARS', maximumFractionDigits: 0
+        }).format(nuevoPrecio);
+      });
+    });
+  </script>
+
+</body>
+</html>
